@@ -1,6 +1,6 @@
 package com.youyu.dao;
 
-import com.youyu.pojo.User;
+import com.youyu.pojo.Questionnaire;
 import java.util.List;
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.DeleteProvider;
@@ -15,6 +15,6 @@ import org.apache.ibatis.annotations.Update;
 import org.apache.ibatis.annotations.UpdateProvider;
 import org.apache.ibatis.type.JdbcType;
 
-public interface UserMapper {
+public interface QuestionnaireMapper {
 
 }

@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service("userService")
 public class UserServiceImpl implements UserService{
     @Autowired
@@ -13,5 +15,9 @@ public class UserServiceImpl implements UserService{
     @Override
     public User login(String acc,String passwd){
         return userMapper.findWithLoginnameAndPassword(acc,passwd);
+    }
+    @Override
+    public List<User> findAll(){
+        return userMapper.findUsers();
     }
 }

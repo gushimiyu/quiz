@@ -44,6 +44,13 @@
     </javaClientGenerator>
 
     <!-- 指定数据库表 -->
+    <table tableName="answer"></table>
+    <table tableName="answernaire"></table>
+    <table tableName="options"></table>
+    <table tableName="question"></table>
+    <table tableName="questionnaire"></table>
+    <table tableName="template"></table>
+    <table tableName="templateopt"></table>
     <table tableName="user"></table>
 
     <!-- 有些表的字段需要指定java类型
