@@ -952,421 +952,706 @@
     <table id="242" parent="2" name="vip">
       <Engine>InnoDB</Engine>
     </table>
-    <table id="243" parent="6" name="user">
+    <table id="243" parent="6" name="answer">
       <Engine>InnoDB</Engine>
     </table>
-    <column id="244" parent="233" name="accID">
+    <table id="244" parent="6" name="answernaire">
+      <Engine>InnoDB</Engine>
+    </table>
+    <table id="245" parent="6" name="options">
+      <Engine>InnoDB</Engine>
+    </table>
+    <table id="246" parent="6" name="question">
+      <Engine>InnoDB</Engine>
+    </table>
+    <table id="247" parent="6" name="questionnaire">
+      <Engine>InnoDB</Engine>
+    </table>
+    <table id="248" parent="6" name="template">
+      <Engine>InnoDB</Engine>
+    </table>
+    <table id="249" parent="6" name="templateopt">
+      <Engine>InnoDB</Engine>
+    </table>
+    <table id="250" parent="6" name="user">
+      <Engine>InnoDB</Engine>
+    </table>
+    <column id="251" parent="233" name="accID">
       <Position>1</Position>
       <DataType>varchar(30)|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="245" parent="233" name="accPasswd">
+    <column id="252" parent="233" name="accPasswd">
       <Position>2</Position>
       <DataType>varchar(30)|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="246" parent="233" name="accLevel">
+    <column id="253" parent="233" name="accLevel">
       <Position>3</Position>
       <DataType>tinyint(4)|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="247" parent="234" name="bookID">
+    <column id="254" parent="234" name="bookID">
       <Position>1</Position>
       <DataType>int(10) unsigned|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="248" parent="234" name="roomID">
+    <column id="255" parent="234" name="roomID">
       <Position>2</Position>
       <DataType>int(10) unsigned|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="249" parent="234" name="bookName">
+    <column id="256" parent="234" name="bookName">
       <Position>3</Position>
       <DataType>varchar(10)|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="250" parent="234" name="bookPhone">
+    <column id="257" parent="234" name="bookPhone">
       <Position>4</Position>
       <DataType>varchar(25)|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="251" parent="234" name="arrTime">
+    <column id="258" parent="234" name="arrTime">
       <Position>5</Position>
       <DataType>datetime|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="252" parent="234" name="leaTime">
+    <column id="259" parent="234" name="leaTime">
       <Position>6</Position>
       <DataType>datetime|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="253" parent="234" name="bookStat">
+    <column id="260" parent="234" name="bookStat">
       <Position>7</Position>
       <DataType>tinyint(4)|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="254" parent="234" name="guestID">
+    <column id="261" parent="234" name="guestID">
       <Position>8</Position>
       <DataType>int(10) unsigned|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="255" parent="234" name="roomID">
+    <index id="262" parent="234" name="roomID">
       <ColNames>roomID</ColNames>
     </index>
-    <index id="256" parent="234" name="guestID">
+    <index id="263" parent="234" name="guestID">
       <ColNames>guestID</ColNames>
     </index>
-    <key id="257" parent="234" name="PRIMARY">
+    <key id="264" parent="234" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>bookID</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="258" parent="234" name="bookinfo_ibfk_1">
+    <foreign-key id="265" parent="234" name="bookinfo_ibfk_1">
       <ColNames>roomID</ColNames>
       <RefSchemaName>hotelmanage</RefSchemaName>
       <RefTableName>roominfo</RefTableName>
       <RefColNames>roomID</RefColNames>
     </foreign-key>
-    <foreign-key id="259" parent="234" name="bookinfo_ibfk_2">
+    <foreign-key id="266" parent="234" name="bookinfo_ibfk_2">
       <ColNames>guestID</ColNames>
       <RefSchemaName>hotelmanage</RefSchemaName>
       <RefTableName>guestsinfo</RefTableName>
       <RefColNames>guestID</RefColNames>
     </foreign-key>
-    <column id="260" parent="235" name="chgID">
+    <column id="267" parent="235" name="chgID">
       <Position>1</Position>
       <DataType>int(10) unsigned|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="261" parent="235" name="newCheckinID">
+    <column id="268" parent="235" name="newCheckinID">
       <Position>2</Position>
       <DataType>int(10) unsigned|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="262" parent="235" name="bechgRoomID">
+    <column id="269" parent="235" name="bechgRoomID">
       <Position>3</Position>
       <DataType>int(10) unsigned|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="263" parent="235" name="guestID">
+    <column id="270" parent="235" name="guestID">
       <Position>4</Position>
       <DataType>int(10) unsigned|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="264" parent="235" name="chgTime">
+    <column id="271" parent="235" name="chgTime">
       <Position>5</Position>
       <DataType>datetime|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="265" parent="235" name="newCheckinID">
+    <index id="272" parent="235" name="newCheckinID">
       <ColNames>newCheckinID</ColNames>
     </index>
-    <index id="266" parent="235" name="bechgRoomID">
+    <index id="273" parent="235" name="bechgRoomID">
       <ColNames>bechgRoomID</ColNames>
     </index>
-    <index id="267" parent="235" name="guestID">
+    <index id="274" parent="235" name="guestID">
       <ColNames>guestID</ColNames>
     </index>
-    <key id="268" parent="235" name="PRIMARY">
+    <key id="275" parent="235" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>chgID</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="269" parent="235" name="changeroom_ibfk_1">
+    <foreign-key id="276" parent="235" name="changeroom_ibfk_1">
       <ColNames>newCheckinID</ColNames>
       <RefSchemaName>hotelmanage</RefSchemaName>
       <RefTableName>checkin</RefTableName>
       <RefColNames>checkinID</RefColNames>
     </foreign-key>
-    <foreign-key id="270" parent="235" name="changeroom_ibfk_2">
+    <foreign-key id="277" parent="235" name="changeroom_ibfk_2">
       <ColNames>bechgRoomID</ColNames>
       <RefSchemaName>hotelmanage</RefSchemaName>
       <RefTableName>roominfo</RefTableName>
       <RefColNames>roomID</RefColNames>
     </foreign-key>
-    <foreign-key id="271" parent="235" name="changeroom_ibfk_3">
+    <foreign-key id="278" parent="235" name="changeroom_ibfk_3">
       <ColNames>guestID</ColNames>
       <RefSchemaName>hotelmanage</RefSchemaName>
       <RefTableName>guestsinfo</RefTableName>
       <RefColNames>guestID</RefColNames>
     </foreign-key>
-    <column id="272" parent="236" name="checkinID">
+    <column id="279" parent="236" name="checkinID">
       <Position>1</Position>
       <DataType>int(10) unsigned|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="273" parent="236" name="guestID">
+    <column id="280" parent="236" name="guestID">
       <Position>2</Position>
       <DataType>int(10) unsigned|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="274" parent="236" name="roomID">
+    <column id="281" parent="236" name="roomID">
       <Position>3</Position>
       <DataType>int(10) unsigned|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="275" parent="236" name="phoneNum">
+    <column id="282" parent="236" name="phoneNum">
       <Position>4</Position>
       <DataType>varchar(25)|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="276" parent="236" name="checkinTime">
+    <column id="283" parent="236" name="checkinTime">
       <Position>5</Position>
       <DataType>datetime|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="277" parent="236" name="expireTime">
+    <column id="284" parent="236" name="expireTime">
       <Position>6</Position>
       <DataType>datetime|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="278" parent="236" name="guestID">
+    <index id="285" parent="236" name="guestID">
       <ColNames>guestID</ColNames>
     </index>
-    <index id="279" parent="236" name="roomID">
+    <index id="286" parent="236" name="roomID">
       <ColNames>roomID</ColNames>
     </index>
-    <key id="280" parent="236" name="PRIMARY">
+    <key id="287" parent="236" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>checkinID</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="281" parent="236" name="checkin_ibfk_1">
+    <foreign-key id="288" parent="236" name="checkin_ibfk_1">
       <ColNames>guestID</ColNames>
       <RefSchemaName>hotelmanage</RefSchemaName>
       <RefTableName>guestsinfo</RefTableName>
       <RefColNames>guestID</RefColNames>
     </foreign-key>
-    <foreign-key id="282" parent="236" name="checkin_ibfk_2">
+    <foreign-key id="289" parent="236" name="checkin_ibfk_2">
       <ColNames>roomID</ColNames>
       <RefSchemaName>hotelmanage</RefSchemaName>
       <RefTableName>roominfo</RefTableName>
       <RefColNames>roomID</RefColNames>
     </foreign-key>
-    <column id="283" parent="237" name="checkoutID">
+    <column id="290" parent="237" name="checkoutID">
       <Position>1</Position>
       <DataType>int(10) unsigned|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="284" parent="237" name="checkinID">
+    <column id="291" parent="237" name="checkinID">
       <Position>2</Position>
       <DataType>int(10) unsigned|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="285" parent="237" name="checkoutTime">
+    <column id="292" parent="237" name="checkoutTime">
       <Position>3</Position>
       <DataType>datetime|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="286" parent="237" name="pay">
+    <column id="293" parent="237" name="pay">
       <Position>4</Position>
       <DataType>int(10) unsigned|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="287" parent="237" name="checkinID">
+    <index id="294" parent="237" name="checkinID">
       <ColNames>checkinID</ColNames>
     </index>
-    <key id="288" parent="237" name="PRIMARY">
+    <key id="295" parent="237" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>checkoutID</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="289" parent="237" name="checkout_ibfk_1">
+    <foreign-key id="296" parent="237" name="checkout_ibfk_1">
       <ColNames>checkinID</ColNames>
       <RefSchemaName>hotelmanage</RefSchemaName>
       <RefTableName>checkin</RefTableName>
       <RefColNames>checkinID</RefColNames>
     </foreign-key>
-    <column id="290" parent="238" name="guestID">
+    <column id="297" parent="238" name="guestID">
       <Position>1</Position>
       <DataType>int(10) unsigned|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="291" parent="238" name="guestName">
+    <column id="298" parent="238" name="guestName">
       <Position>2</Position>
       <DataType>varchar(10)|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="292" parent="238" name="guestDoc">
+    <column id="299" parent="238" name="guestDoc">
       <Position>3</Position>
       <DataType>varchar(20)|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="293" parent="238" name="guestStat">
+    <column id="300" parent="238" name="guestStat">
       <Position>4</Position>
       <DataType>tinyint(4)|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="294" parent="238" name="PRIMARY">
+    <key id="301" parent="238" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>guestID</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="295" parent="239" name="checkinID">
+    <column id="302" parent="239" name="checkinID">
       <Position>1</Position>
       <DataType>int(10) unsigned|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="296" parent="239" name="guestID">
+    <column id="303" parent="239" name="guestID">
       <Position>2</Position>
       <DataType>int(10) unsigned|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="297" parent="239" name="checkinID">
+    <index id="304" parent="239" name="checkinID">
       <ColNames>checkinID</ColNames>
     </index>
-    <index id="298" parent="239" name="guestID">
+    <index id="305" parent="239" name="guestID">
       <ColNames>guestID</ColNames>
     </index>
-    <foreign-key id="299" parent="239" name="ncheckin_ibfk_1">
+    <foreign-key id="306" parent="239" name="ncheckin_ibfk_1">
       <ColNames>checkinID</ColNames>
       <RefSchemaName>hotelmanage</RefSchemaName>
       <RefTableName>checkin</RefTableName>
       <RefColNames>checkinID</RefColNames>
     </foreign-key>
-    <foreign-key id="300" parent="239" name="ncheckin_ibfk_2">
+    <foreign-key id="307" parent="239" name="ncheckin_ibfk_2">
       <ColNames>guestID</ColNames>
       <RefSchemaName>hotelmanage</RefSchemaName>
       <RefTableName>guestsinfo</RefTableName>
       <RefColNames>guestID</RefColNames>
     </foreign-key>
-    <column id="301" parent="240" name="roomID">
+    <column id="308" parent="240" name="roomID">
       <Position>1</Position>
       <DataType>int(10) unsigned|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="302" parent="240" name="roomType">
+    <column id="309" parent="240" name="roomType">
       <Position>2</Position>
       <DataType>tinyint(4)|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="303" parent="240" name="roomStat">
+    <column id="310" parent="240" name="roomStat">
       <Position>3</Position>
       <DataType>tinyint(4)|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="304" parent="240" name="PRIMARY">
+    <key id="311" parent="240" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>roomID</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="305" parent="241" name="roomType">
+    <column id="312" parent="241" name="roomType">
       <Position>1</Position>
       <DataType>tinyint(4)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="306" parent="241" name="roomName">
+    <column id="313" parent="241" name="roomName">
       <Position>2</Position>
       <DataType>varchar(30)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="307" parent="241" name="roomprice">
+    <column id="314" parent="241" name="roomprice">
       <Position>3</Position>
       <DataType>int(10) unsigned|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="308" parent="241" name="vipprice">
+    <column id="315" parent="241" name="vipprice">
       <Position>4</Position>
       <DataType>int(10) unsigned|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="309" parent="241" name="clockprice">
+    <column id="316" parent="241" name="clockprice">
       <Position>5</Position>
       <DataType>int(10) unsigned|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="310" parent="241" name="PRIMARY">
+    <key id="317" parent="241" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>roomType</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="311" parent="242" name="vipID">
+    <column id="318" parent="242" name="vipID">
       <Position>1</Position>
       <DataType>int(10) unsigned|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="312" parent="242" name="guestID">
+    <column id="319" parent="242" name="guestID">
       <Position>2</Position>
       <DataType>int(10) unsigned|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="313" parent="242" name="vipPhone">
+    <column id="320" parent="242" name="vipPhone">
       <Position>3</Position>
       <DataType>varchar(25)|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="314" parent="242" name="guestID">
+    <index id="321" parent="242" name="guestID">
       <ColNames>guestID</ColNames>
     </index>
-    <key id="315" parent="242" name="PRIMARY">
+    <key id="322" parent="242" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>vipID</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="316" parent="242" name="vip_ibfk_1">
+    <foreign-key id="323" parent="242" name="vip_ibfk_1">
       <ColNames>guestID</ColNames>
       <RefSchemaName>hotelmanage</RefSchemaName>
       <RefTableName>guestsinfo</RefTableName>
       <RefColNames>guestID</RefColNames>
     </foreign-key>
-    <column id="317" parent="243" name="acc">
+    <column id="324" parent="243" name="belongsto">
       <Position>1</Position>
-      <DataType>varchar(20)|0</DataType>
+      <DataType>int(11)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="318" parent="243" name="passwd">
+    <column id="325" parent="243" name="answerto">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="326" parent="243" name="optionto">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="327" parent="243" name="content">
+      <Position>4</Position>
+      <DataType>text|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="328" parent="243" name="belongsto">
+      <ColNames>belongsto</ColNames>
+    </index>
+    <index id="329" parent="243" name="answerto">
+      <ColNames>answerto</ColNames>
+    </index>
+    <index id="330" parent="243" name="optionto">
+      <ColNames>optionto</ColNames>
+    </index>
+    <foreign-key id="331" parent="243" name="answer_ibfk_1">
+      <ColNames>belongsto</ColNames>
+      <RefSchemaName>quizdb</RefSchemaName>
+      <RefTableName>answernaire</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="332" parent="243" name="answer_ibfk_2">
+      <ColNames>answerto</ColNames>
+      <RefSchemaName>quizdb</RefSchemaName>
+      <RefTableName>question</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="333" parent="243" name="answer_ibfk_3">
+      <ColNames>optionto</ColNames>
+      <RefSchemaName>quizdb</RefSchemaName>
+      <RefTableName>options</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="334" parent="244" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="335" parent="244" name="belongsto">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="336" parent="244" name="dotime">
+      <Position>3</Position>
+      <DataType>datetime|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="337" parent="244" name="belongsto">
+      <ColNames>belongsto</ColNames>
+    </index>
+    <key id="338" parent="244" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="339" parent="244" name="answernaire_ibfk_1">
+      <ColNames>belongsto</ColNames>
+      <RefSchemaName>quizdb</RefSchemaName>
+      <RefTableName>questionnaire</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="340" parent="245" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="341" parent="245" name="content">
+      <Position>2</Position>
+      <DataType>text|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="342" parent="245" name="belongsto">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="343" parent="245" name="nextquestion">
+      <Position>4</Position>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="344" parent="245" name="belongsto">
+      <ColNames>belongsto</ColNames>
+    </index>
+    <key id="345" parent="245" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="346" parent="245" name="options_ibfk_1">
+      <ColNames>belongsto</ColNames>
+      <RefSchemaName>quizdb</RefSchemaName>
+      <RefTableName>question</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="347" parent="246" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="348" parent="246" name="belongsto">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="349" parent="246" name="type">
+      <Position>3</Position>
+      <DataType>varchar(10)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="350" parent="246" name="numbering">
+      <Position>4</Position>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="351" parent="246" name="content">
+      <Position>5</Position>
+      <DataType>text|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="352" parent="246" name="piture">
+      <Position>6</Position>
+      <DataType>mediumblob|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="353" parent="246" name="belongsto">
+      <ColNames>belongsto</ColNames>
+    </index>
+    <key id="354" parent="246" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="355" parent="246" name="question_ibfk_1">
+      <ColNames>belongsto</ColNames>
+      <RefSchemaName>quizdb</RefSchemaName>
+      <RefTableName>questionnaire</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="356" parent="247" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="357" parent="247" name="title">
+      <Position>2</Position>
+      <DataType>tinytext|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="358" parent="247" name="description">
+      <Position>3</Position>
+      <DataType>text|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="359" parent="247" name="ownner">
+      <Position>4</Position>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="360" parent="247" name="status">
+      <Position>5</Position>
+      <DataType>varchar(10)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="361" parent="247" name="cretime">
+      <Position>6</Position>
+      <DataType>datetime|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="362" parent="247" name="lasttime">
+      <Position>7</Position>
+      <DataType>datetime|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="363" parent="247" name="ownner">
+      <ColNames>ownner</ColNames>
+    </index>
+    <key id="364" parent="247" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="365" parent="247" name="questionnaire_ibfk_1">
+      <ColNames>ownner</ColNames>
+      <RefSchemaName>quizdb</RefSchemaName>
+      <RefTableName>user</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="366" parent="248" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="367" parent="248" name="type">
       <Position>2</Position>
       <DataType>varchar(20)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
+    <column id="368" parent="248" name="content">
+      <Position>3</Position>
+      <DataType>text|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="369" parent="248" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="370" parent="249" name="content">
+      <Position>1</Position>
+      <DataType>text|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="371" parent="249" name="belongsto">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="372" parent="249" name="belongsto">
+      <ColNames>belongsto</ColNames>
+    </index>
+    <foreign-key id="373" parent="249" name="templateopt_ibfk_1">
+      <ColNames>belongsto</ColNames>
+      <RefSchemaName>quizdb</RefSchemaName>
+      <RefTableName>template</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="374" parent="250" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="375" parent="250" name="acc">
+      <Position>2</Position>
+      <DataType>varchar(20)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="376" parent="250" name="passwd">
+      <Position>3</Position>
+      <DataType>varchar(20)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="377" parent="250" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
   </database-model>
 </dataSource>

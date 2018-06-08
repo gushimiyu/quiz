@@ -1,18 +1,13 @@
 package com.youyu.pojo;
 
 public class User {
-    private Integer id;
-
     private String acc;
 
     private String passwd;
 
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
+    public User(String acc,String passwd){
+        this.acc=acc;
+        this.passwd=passwd;
     }
 
     public String getAcc() {
