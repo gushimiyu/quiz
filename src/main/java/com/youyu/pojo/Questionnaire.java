@@ -17,6 +17,8 @@ public class Questionnaire {
 
     private String description;
 
+    private int browsevolume;
+
     public Integer getId() {
         return id;
     }
@@ -71,5 +73,13 @@ public class Questionnaire {
 
     public void setDescription(String description) {
         this.description = description == null ? null : description.trim();
+    }
+
+    public void setBrowsevolume(int browsevolume) {
+        this.browsevolume = browsevolume;
+    }
+
+    public int getBrowsevolume() {
+        return browsevolume;
     }
 }

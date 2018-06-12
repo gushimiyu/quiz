@@ -9,6 +9,26 @@ public class Question {
 
     private Integer numbering;
 
+    private String content;
+
+    private byte[] picture;
+
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content == null ? null : content.trim();
+    }
+
+    public byte[] getPicture() {
+        return picture;
+    }
+
+    public void setPicture(byte[] picture) {
+        this.picture = picture;
+    }
+
     public Integer getId() {
         return id;
     }

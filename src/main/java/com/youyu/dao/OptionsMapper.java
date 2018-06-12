@@ -16,5 +16,16 @@ import org.apache.ibatis.annotations.UpdateProvider;
 import org.apache.ibatis.type.JdbcType;
 
 public interface OptionsMapper {
+    //添加选项
+    @Insert("INSERT INTO options(content,belongsto) VALUES (#{opt.content},#{opt.belongsto})")
+    @org.apache.ibatis.annotations.Options(useGeneratedKeys = true,keyProperty = "id")
+    void addOption(Options opt);
 
+    //删除id题的所有选项
+    @Delete("DELETE FROM options WHERE belongsto = #{Qid}")
+    void delOptions(int Qid);
+
+    //找到id题的所有选型
+    @Select("SELECT * FROM options WHERE belongsto = #{Qid}")
+    List<Options> getOptions(int Qid);
 }
