@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dataSource name="@localhost">
+<dataSource name="@192.168.1.104">
   <database-model serializer="dbm" rdbms="MYSQL" format-version="4.7">
     <root id="1">
       <DefaultCasing>lower/lower</DefaultCasing>
@@ -1520,7 +1520,7 @@
       <DataType>text|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="352" parent="246" name="piture">
+    <column id="352" parent="246" name="picture">
       <Position>6</Position>
       <DataType>mediumblob|0</DataType>
       <ColumnKind>normal</ColumnKind>
@@ -1576,79 +1576,89 @@
       <DataType>datetime|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="363" parent="247" name="ownner">
+    <column id="363" parent="247" name="brv">
+      <Position>8</Position>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="364" parent="247" name="ownner">
       <ColNames>ownner</ColNames>
     </index>
-    <key id="364" parent="247" name="PRIMARY">
+    <key id="365" parent="247" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="365" parent="247" name="questionnaire_ibfk_1">
+    <foreign-key id="366" parent="247" name="questionnaire_ibfk_1">
       <ColNames>ownner</ColNames>
       <RefSchemaName>quizdb</RefSchemaName>
       <RefTableName>user</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="366" parent="248" name="id">
+    <column id="367" parent="248" name="id">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="367" parent="248" name="type">
+    <column id="368" parent="248" name="typee">
       <Position>2</Position>
       <DataType>varchar(20)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="368" parent="248" name="content">
+    <column id="369" parent="248" name="content">
       <Position>3</Position>
       <DataType>text|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="369" parent="248" name="PRIMARY">
+    <column id="370" parent="248" name="qtype">
+      <Position>4</Position>
+      <DataType>varchar(20)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="371" parent="248" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="370" parent="249" name="content">
+    <column id="372" parent="249" name="content">
       <Position>1</Position>
       <DataType>text|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="371" parent="249" name="belongsto">
+    <column id="373" parent="249" name="belongsto">
       <Position>2</Position>
       <DataType>int(11)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="372" parent="249" name="belongsto">
+    <index id="374" parent="249" name="belongsto">
       <ColNames>belongsto</ColNames>
     </index>
-    <foreign-key id="373" parent="249" name="templateopt_ibfk_1">
+    <foreign-key id="375" parent="249" name="templateopt_ibfk_1">
       <ColNames>belongsto</ColNames>
       <RefSchemaName>quizdb</RefSchemaName>
       <RefTableName>template</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="374" parent="250" name="id">
+    <column id="376" parent="250" name="id">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="375" parent="250" name="acc">
+    <column id="377" parent="250" name="acc">
       <Position>2</Position>
       <DataType>varchar(20)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="376" parent="250" name="passwd">
+    <column id="378" parent="250" name="passwd">
       <Position>3</Position>
       <DataType>varchar(20)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="377" parent="250" name="PRIMARY">
+    <key id="379" parent="250" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>

@@ -1,21 +1,13 @@
 package com.youyu.dao;
 
 import com.youyu.pojo.Question;
-import com.youyu.pojo.QuestionWithBLOBs;
+
 import java.util.List;
-import org.apache.ibatis.annotations.Delete;
-import org.apache.ibatis.annotations.DeleteProvider;
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.InsertProvider;
+
 import org.apache.ibatis.annotations.Param;
-import org.apache.ibatis.annotations.Result;
-import org.apache.ibatis.annotations.Results;
 import org.apache.ibatis.annotations.Select;
-import org.apache.ibatis.annotations.SelectProvider;
-import org.apache.ibatis.annotations.Update;
-import org.apache.ibatis.annotations.UpdateProvider;
-import org.apache.ibatis.type.JdbcType;
 
 public interface QuestionMapper {
-
+    @Select("select * from question where belongsto=#{belongsto}")
+    List<Question> findAllQ(@Param("belongsto")Integer belongsto);
 }

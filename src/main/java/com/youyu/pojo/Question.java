@@ -9,6 +9,26 @@ public class Question {
 
     private Integer numbering;
 
+    private String content;
+
+    private byte[] piture;
+
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content == null ? null : content.trim();
+    }
+
+    public byte[] getPiture() {
+        return piture;
+    }
+
+    public void setPiture(byte[] piture) {
+        this.piture = piture;
+    }
+
     public Integer getId() {
         return id;
     }

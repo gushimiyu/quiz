@@ -17,6 +17,8 @@ public class Questionnaire {
 
     private String description;
 
+    private int brv;
+
     public Integer getId() {
         return id;
     }
@@ -71,5 +73,11 @@ public class Questionnaire {
 
     public void setDescription(String description) {
         this.description = description == null ? null : description.trim();
+    }
+
+    public int getBrv(){return brv;}
+
+    public void setBrv(Integer brv){
+        this.brv = brv;
     }
 }
