@@ -23,4 +23,8 @@ public interface QuestionMapper {
     //查找id找到题目
     @Select("SELECT * FROM question WHERE id = #{Qid}")
     Question getQuestionFromQid(int Qid);
+
+    //通过id找到问卷id
+    @Select("SELECT belongsto FROM question WHERE id = #{Qid}")
+    int getQNidByqid(int Qid);
 }

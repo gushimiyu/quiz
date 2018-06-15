@@ -12,11 +12,11 @@
     <title>问卷编辑</title>
     <script src="jquery-3.3.1.min.js"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="../assets/materialize/css/materialize.min.css" media="screen,projection" />
+    <link rel="stylesheet" href="assets/materialize/css/materialize.min.css" media="screen,projection" />
     <!-- Bootstrap Styles-->
-    <link href="../assets/css/bootstrap.css" rel="stylesheet" />
+    <link href="assets/css/bootstrap.css" rel="stylesheet" />
     <!-- FontAwesome Styles-->
-    <link href="../assets/css/font-awesome.css" rel="stylesheet" />
+    <link href="assets/css/font-awesome.css" rel="stylesheet" />
     <!-- Google Fonts-->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
     <%
@@ -25,27 +25,28 @@
 </head>
 <body>
 
-<div class="row">
-    <div class="col-md-4 col-sm-4">
-        <div class="card">
+
+    <div class="col-md-4 col-sm-4" style="margin-right: -15px">
+
+        <div class="card"  style="position: fixed ! important; left: 0px; top: 0px;width: 600px">
             <div class="card-action">
                 题目编辑
             </div>
-            <div class="card-content">
+            <div class="card-content" style="margin-top: -20px">
                 <ul class="collapsible" data-collapsible="accordion">
                     <li>
                         <div class="collapsible-header"><i class="material-icons">reorder</i>单选题</div>
                         <div class="collapsible-body" style="padding-bottom: 50px;padding-right: 10px">
 
 
-                            <form><!--单选题提交-->
+                            <form class="radioform"><!--单选题提交-->
                                 <div class="row" id="radioform" style="padding-left:40px;padding-right: 40px">
 
                                     <input type="hidden" name="qtype" value="radio">
                                     <input type="hidden" name="belongsto" value="1">
                                     <div class="input-field">问题：<input id="content" name="content" type="text" placeholder="在此输入问题描述">
                                     </div>
-                                    <input type="text" class="form-control" id="numbering" name="numbering" placeholder="请输入题号">
+                                    <input type="number" class="form-control" id="numbering" name="numbering" placeholder="默认添加至最后一题，也可在指定位置插入题目" min="1" step="1">
 
                                     <input type="hidden" id="optnum" name="optnum" value="1">
                                     <div class="col-sm-10">
@@ -57,45 +58,103 @@
                                 </div>
                                 <button class="btn btn-primary" style="float: right;" id="btn_addquestion" formaction="#" type="button">添加题目</button>
                                 <button class="btn btn-primary" style="float: right;margin-right: 5px;" id="addbtn" formaction="#" type="button">添加选项</button>
+                                <a onclick="" id="cancela" style="float:right;margin-right:8px;margin-top:6px">重置</a>
                             </form>
 
 
                         </div>
                     </li>
+
+
                     <li>
                         <div class="collapsible-header"><i class="material-icons">reorder</i>多选题</div>
                         <div class="collapsible-body" style="padding-bottom: 50px;padding-right: 10px">
 
-                            <div class="row" style="padding-left:40px;padding-right: 40px">
+                            <form class="checkboxform"><!--多选题提交-->
+                                <div class="row" id="checkboxform" style="padding-left:40px;padding-right: 40px">
+
+                                    <input type="hidden" name="qtype" value="checkbox">
+                                    <input type="hidden" name="belongsto" value="1">
+                                    <div class="input-field">问题：<input id="content" name="content" type="text" placeholder="在此输入问题描述">
+                                    </div>
+                                    <input type="number" class="form-control" id="numbering" name="numbering" placeholder="默认添加至最后一题，也可在指定位置插入题目" min="1" step="1">
+
+                                    <input type="hidden" id="optnum" name="optnum" value="1">
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="option0" name="option0" placeholder="请输入选项内容">
+                                    </div>
+                                    <label for="option0" class="col-sm-2 control-label"><a onclick="" id="delbtn">x</a></label>
 
 
-                                <div class="input-field">你是不是哈皮<input id="111" type="text">
                                 </div>
-
-
-                                <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="firstname" placeholder="请输入名字">
-                                </div>
-                                <label for="firstname" class="col-sm-2 control-label"><a href="">x</a></label>
-                                <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="firstname" placeholder="请输入名字">
-                                </div>
-                                <label for="firstname" class="col-sm-2 control-label"><a href="">x</a></label>
-
-                            </div>
-                            <button class="btn btn-primary" style="float: right;" formaction="#">添加题目</button>
-                            <button class="btn btn-primary" style="float: right;margin-right: 5px;" formaction="#">添加选项</button>
+                                <button class="btn btn-primary" style="float: right;" id="btn_addquestion" formaction="#" type="button">添加题目</button>
+                                <button class="btn btn-primary" style="float: right;margin-right: 5px;" id="addbtn" formaction="#" type="button">添加选项</button>
+                                <a onclick="" id="cancela" style="float:right;margin-right:8px;margin-top:6px">重置</a>
+                            </form>
 
                         </div>
                     </li>
+
                     <li>
-                        <div class="collapsible-header"><i class="material-icons">reorder</i>文字</div>
+                        <div class="collapsible-header"><i class="material-icons">reorder</i>量表题</div>
                         <div class="collapsible-body" style="padding-bottom: 50px;padding-right: 10px">
-                            <div class="row" style="padding-left:40px;padding-right: 40px">
-                                <div class="input-field">nmsl<textarea id="textarea1" class="materialize-textarea"></textarea>
+
+                            <form><!--量表题提交-->
+                                <div class="row" id="starform" style="padding-left:40px;padding-right: 40px">
+
+                                    <input type="hidden" name="qtype" value="star">
+                                    <input type="hidden" name="belongsto" value="1">
+                                    <div class="input-field">问题：<input id="content" name="content" type="text" placeholder="在此输入问题描述">
+                                    </div>
+                                    <input type="number" class="form-control" id="numbering" name="numbering" placeholder="默认添加至最后一题，也可在指定位置插入题目" min="1" step="1">
+
                                 </div>
-                            </div>
-                            <button class="btn btn-primary" style="float: right;">添加题目</button>
+                                <button class="btn btn-primary" style="float: right;" id="btn_addquestion" formaction="#" type="button">添加题目</button>
+                                <a onclick="" id="cancela" style="float:right;margin-right:8px;margin-top:6px">重置</a>
+                            </form>
+
+                        </div>
+                    </li>
+
+
+                    <li>
+                        <div class="collapsible-header"><i class="material-icons">reorder</i>文字题</div>
+                        <div class="collapsible-body" style="padding-bottom: 50px;padding-right: 10px">
+
+                            <form><!--文字题提交-->
+                                <div class="row" id="textform" style="padding-left:40px;padding-right: 40px">
+
+                                    <input type="hidden" name="qtype" value="text">
+                                    <input type="hidden" name="belongsto" value="1">
+                                    <div class="input-field">问题：<input id="content" name="content" type="text" placeholder="在此输入问题描述">
+                                    </div>
+                                    <input type="number" class="form-control" id="numbering" name="numbering" placeholder="默认添加至最后一题，也可在指定位置插入题目" min="1" step="1">
+
+                                </div>
+                                <button class="btn btn-primary" style="float: right;" id="btn_addquestion" formaction="#" type="button">添加题目</button>
+                                <a onclick="" id="cancela" style="float:right;margin-right:8px;margin-top:6px">重置</a>
+                            </form>
+
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="collapsible-header"><i class="material-icons">reorder</i>多行文字题</div>
+                        <div class="collapsible-body" style="padding-bottom: 50px;padding-right: 10px">
+
+                            <form><!--文字题提交-->
+                                <div class="row" id="textareaform" style="padding-left:40px;padding-right: 40px">
+
+                                    <input type="hidden" name="qtype" value="textarea">
+                                    <input type="hidden" name="belongsto" value="1">
+                                    <div class="input-field">问题：<input id="content" name="content" type="text" placeholder="在此输入问题描述">
+                                    </div>
+                                    <input type="number" class="form-control" id="numbering" name="numbering" placeholder="默认添加至最后一题，也可在指定位置插入题目" min="1" step="1">
+
+                                </div>
+                                <button class="btn btn-primary" style="float: right;" id="btn_addquestion" formaction="#" type="button">添加题目</button>
+                                <a onclick="" id="cancela" style="float:right;margin-right:8px;margin-top:6px">重置</a>
+                            </form>
 
                         </div>
                     </li>
@@ -103,10 +162,10 @@
             </div>
         </div>
     </div>
-    <div class="col-md-6 col-sm-6">
+    <div class="col-md-6 col-sm-6" style="margin-right: -15px">
         <div class="card" >
 
-            <div class="card-action">
+            <div class="card-action" style="padding-top: 50px;">
                 <span class="card-title">&nbsp;&nbsp;&nbsp;&nbsp;问卷1</span>
                 <p style="padding-top: 30px">&nbsp;&nbsp;&nbsp;&nbsp;描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述</p>
             </div>
@@ -114,41 +173,84 @@
 
             <div class="card-content" style="padding-bottom: 50px">
 
-                <div id="showplace"></div>
+                <div id="showplace">
 
                 <c:forEach items="${questionlist}" var="question">
                     <div class="card-content">
-                        <span class="card-title">${question.q.content}</span>
-                        <c:forEach items="${question.o}" var="opt">
-                            <p>
-                                <input class="with-gap" type="radio" name="opt${question.q.id}" id="opt${opt.id}">
-                                <label for="opt${opt.id}">${opt.content}</label>
-                            </p>
-                        </c:forEach>
-                        <div class="card-action" style="float: right">
-                            <a href="#" style="color: red">删除</a>
-                            <button class="btn btn-primary" type="button">编辑</button>
-                        </div>
+                        <form>
+                            <input type="hidden" name="belongsto" id="belongsto" value="1">
+                            <input type="hidden" name="id" id="questionid" value="${question.q.id}">
+                            <input type="hidden" name="numbering" id="numbering" value="${question.q.numbering}">
+                            <c:if test="${question.q.type=='radio'||question.q.type=='checkbox'}">
+                                <input type="hidden" name="optnum" id="optnum" value="${question.o.size()}">
+                            </c:if>
+                            <input type="hidden" name="qtype" id="qtype" value="${question.q.type}">
+                            <span class="card-title">${question.q.numbering}. ${question.q.content}</span>
+                            <c:choose>
+                                <c:when test="${question.q.type=='radio'||question.q.type=='checkbox'}">
+                                    <c:forEach items="${question.o}" var="opt">
+                                        <p>
+                                            <input class="with-gap" type="${question.q.type}" name="opt${question.q.id}" id="opt${opt.id}">
+                                            <label for="opt${opt.id}">${opt.content}</label>
+                                        </p>
+                                    </c:forEach>
+                                </c:when>
+                                <c:when test="${question.q.type=='star'}">
+                                    <p>
+                                        非常不满意
+                                        <input class="with-gap" type="radio" name="star${question.q.id}" id="star1">
+                                        <label for="star1">1分&nbsp;&nbsp;</label>
+                                        <input class="with-gap" type="radio" name="star${question.q.id}" id="star2">
+                                        <label for="star2">2分&nbsp;&nbsp;</label>
+                                        <input class="with-gap" type="radio" name="star${question.q.id}" id="star3">
+                                        <label for="star3">3分&nbsp;&nbsp;</label>
+                                        <input class="with-gap" type="radio" name="star${question.q.id}" id="star4">
+                                        <label for="star4">4分&nbsp;&nbsp;</label>
+                                        <input class="with-gap" type="radio" name="star${question.q.id}" id="star5">
+                                        <label for="star5">5分&nbsp;&nbsp;</label>
+                                        非常满意
+                                    </p>
+                                </c:when>
+                                <c:when test="${question.q.type=='textarea'}">
+                                    <textarea type="text" class="materialize-textarea"  placeholder="用户可以在此处答题"></textarea>
+                                </c:when>
+                                <c:otherwise>
+                                    <input type="text" class="form-control"  placeholder="用户可以在此处答题">
+                                </c:otherwise>
+                            </c:choose>
+                            <div class="card-action" style="float: right">
+                                <a onclick="" style="color: red" id="delq">删除</a>
+                                <button class="btn btn-primary" type="button" id="edtbtn">编辑</button>
+                            </div>
+                        </form>
                     </div>
                 </c:forEach>
 
+                </div>
+
+                <p>下面是样例</p>
+
                 <div class="card-content">
-                    <span class="card-title">Card Title</span>
+                    <input type="hidden" name="belongsto" id="belongsto" value="1">
+                    <input type="hidden" name="numbering" id="numbering" value="10">
+                    <input type="hidden" name="optnum" id="optnum" value="3">
+                    <input type="hidden" name="qtype" id="qtype" value="radio">
+                    <span class="card-title">把laoka放进冰箱需要几步？</span>
                     <p>
-                        <input class="with-gap" name="group1" type="radio" id="test1"  />
-                        <label for="test1">Green</label>
-                        <input class="with-gap" name="group1" type="radio" id="test2"  />
-                        <label for="test2">Green</label>
-                        <input class="with-gap" name="group1" type="radio" id="test3"  />
-                        <label for="test3">Green</label>
+                        <input class="with-gap" name="group1" type="radio" id="opt1"  />
+                        <label for="opt1">1步</label>
                     </p>
                     <p>
-                        <input type="checkbox" class="filled-in" id="filled-in-box" checked="checked" />
-                        <label for="filled-in-box">Filled in</label>
+                        <input class="with-gap" name="group1" type="radio" id="opt2"  />
+                        <label for="opt2">2步</label>
+                    </p>
+                    <p>
+                        <input class="with-gap" name="group1" type="radio" id="opt3"  />
+                        <label for="opt3">3步</label>
                     </p>
                     <div class="card-action" style="float: right">
                         <a href="#" style="color: red">删除</a>
-                        <button class="btn btn-primary">编辑</button>
+                        <button class="btn btn-primary" type="button" id="edtbtn">编辑</button>
                     </div>
                 </div>
 
@@ -177,7 +279,7 @@
             <div class="card-action">
                 题目模板
             </div>
-            <div class="card-content">
+            <div class="card-content" style="margin: -10px">
                 <ul class="collapsible" data-collapsible="accordion">
                     <li>
                         <div class="collapsible-header"><i class="material-icons">filter_drama</i>First</div>
@@ -195,83 +297,12 @@
             </div>
         </div>
     </div>
-</div>
+
 
 </body>
 
 <!-- Bootstrap Js -->
 <script src="../assets/js/bootstrap.min.js"></script>
 <script src="../assets/materialize/js/materialize.min.js"></script>
-<script type="text/javascript">
-    $(document).ready(function() {
-        $('#addbtn').click(function(){
-            var optnum=$(this).prev().prev().children("#optnum").val();
-
-
-            var opt_div=document.createElement("div");
-            var opt_ipt=document.createElement("input");
-            var lab_btn=document.createElement("label");
-            var a_btn=document.createElement("a");
-
-            opt_div.setAttribute("class","col-sm-10");
-
-            opt_ipt.type="text";
-            opt_ipt.setAttribute("class","form-control");
-            opt_ipt.id="option"+optnum;
-            opt_ipt.name="option"+optnum;
-            opt_ipt.setAttribute("placeholder","请输入选项内容");
-
-            lab_btn.setAttribute("for","option"+optnum);
-            lab_btn.setAttribute("class","col-sm-2 control-label");
-
-            a_btn.setAttribute("onclick","");
-            a_btn.id="delbtn";
-            a_btn.text="x";
-
-            opt_div.appendChild(opt_ipt);
-            lab_btn.appendChild(a_btn);
-
-            document.getElementById('radioform').appendChild(opt_div);
-            document.getElementById('radioform').appendChild(lab_btn);
-
-            var temp=parseInt(optnum);
-            temp=temp+1;
-            $(this).prev().prev().children("#optnum").val(temp);
-        });
-
-        $('#radioform').on("click","#delbtn",function(){
-            var optnum=$(this).parent().siblings("#optnum").val();
-            $(this).parent().siblings("#optnum").val(optnum-1);
-
-            var ltemp=$(this).parent().prev().children().attr("name");
-            $(this).parent().nextAll(".col-sm-10").each(function(){
-                var ntemp=$(this).children().attr("name");
-                $(this).children().attr("name",ltemp);
-                $(this).children().attr("id",ltemp);
-                $(this).next().attr("for",ltemp);
-                ltemp=ntemp;
-            });
-
-            $(this).parent().prev().remove();
-            $(this).parent().remove();
-        });
-
-        $('form').on("click","#btn_addquestion",function () {
-            $.ajax({
-                type:"POST",
-                dataType:"json",
-                url:"<%=basePath%>/json.addq",
-                data:$(this).parent().serialize(),
-                success:function (data) {
-                    var str="<div class=\"card-content\"><span class=\"card-title\">"+data.q.content+"</span>";
-                    for (i=0;i<data.o.length;i++){
-                        str=str+"<p><input class=\"with-gap\" type=\"radio\" name=\"opt"+data.q.id+"\" id=\"opt"+data.o[i].id+"\"><label for=\"opt"+data.o[i].id+"\">"+data.o[i].content+"</label></p>";
-                    }
-                    str=str+"<div class=\"card-action\" style=\"float: right\"><a href=\"#\" style=\"color: red\">删除</a><button class=\"btn btn-primary\" type=\"button\">编辑</button></div>";
-                    $('#showplace').append(str);
-                }
-            });
-        })
-    });
-</script>
+<script src="../editformjs.js"></script>
 </html>

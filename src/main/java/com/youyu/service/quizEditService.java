@@ -21,4 +21,7 @@ public interface quizEditService {
 
     //返回问题id为Qid的问题与选项
     Questionexm getQexmById(int qid);
+
+    //通过题目id返回它所属的问卷
+    int getQuestionnaireById(int id);
 }

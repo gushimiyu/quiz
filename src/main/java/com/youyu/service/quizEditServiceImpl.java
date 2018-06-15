@@ -29,7 +29,9 @@ public class quizEditServiceImpl implements quizEditService{
     @Override
     //添加选项
     public int addOption(Options options){
+        System.out.println("222");
         optionsMapper.addOption(options);
+        System.out.println("333");
         return options.getId();
     }
 
@@ -40,6 +42,7 @@ public class quizEditServiceImpl implements quizEditService{
         questionMapper.delQuestion(id);
     }
 
+    //形成一份问卷的qexm
     @Override
     public List<Questionexm> getAll(int QNid) {
         List<Questionexm> relist= new ArrayList<Questionexm>();
@@ -55,11 +58,17 @@ public class quizEditServiceImpl implements quizEditService{
         return relist;
     }
 
+    //通过id生成一道qexm
     @Override
     public Questionexm getQexmById(int qid) {
         Questionexm reQexm=new Questionexm();
         reQexm.setQ(questionMapper.getQuestionFromQid(qid));
         reQexm.setO(optionsMapper.getOptions(qid));
         return reQexm;
+    }
+
+    @Override
+    public int getQuestionnaireById(int id) {
+        return questionMapper.getQNidByqid(id);
     }
 }

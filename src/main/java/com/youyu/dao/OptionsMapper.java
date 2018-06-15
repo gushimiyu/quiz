@@ -17,7 +17,7 @@ import org.apache.ibatis.type.JdbcType;
 
 public interface OptionsMapper {
     //添加选项
-    @Insert("INSERT INTO options(content,belongsto) VALUES (#{opt.content},#{opt.belongsto})")
+    @Insert("INSERT INTO options(content,belongsto,nextquestion) VALUES (#{content},#{belongsto},0)")
     @org.apache.ibatis.annotations.Options(useGeneratedKeys = true,keyProperty = "id")
     void addOption(Options opt);
 
