@@ -17,6 +17,7 @@ CREATE TABLE questionnaire(
 	status VARCHAR(10),
 	cretime DATETIME,
 	lasttime DATETIME,
+	brv INT,
 	FOREIGN KEY(ownner) REFERENCES user(id)
 );
 
@@ -62,7 +63,9 @@ CREATE TABLE answer(
 #模板题目
 CREATE TABLE template(
 	id INT AUTO_INCREMENT PRIMARY KEY,
-	type VARCHAR(20),
+	typee VARCHAR(20),
+	qtype VARCHAR(20),
+	showname VARCHAR(20),
 	content TEXT
 );
 #模板选项

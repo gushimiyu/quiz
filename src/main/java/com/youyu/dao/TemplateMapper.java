@@ -16,5 +16,16 @@ import org.apache.ibatis.annotations.UpdateProvider;
 import org.apache.ibatis.type.JdbcType;
 
 public interface TemplateMapper {
+    //搜索所有的题目种类
+    @Select("SELECT DISTINCT qtype FROM template ")
+    List<String> getAllType();
+
+    //通过种类找到所有模板题目
+    @Select("SELECT * FROM template WHERE qtype = #{type}")
+    List<Template> getTbyType(String type);
+
+    //通过showname找到题目
+    @Select("SELECT * FROM template WHERE showname = #{showname}")
+    Template getTbyshowname(String showname);
 
 }

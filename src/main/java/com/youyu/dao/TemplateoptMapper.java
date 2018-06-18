@@ -2,16 +2,12 @@ package com.youyu.dao;
 
 import com.youyu.pojo.Templateopt;
 import java.util.List;
-import org.apache.ibatis.annotations.DeleteProvider;
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.InsertProvider;
-import org.apache.ibatis.annotations.Param;
-import org.apache.ibatis.annotations.Result;
-import org.apache.ibatis.annotations.Results;
-import org.apache.ibatis.annotations.SelectProvider;
-import org.apache.ibatis.annotations.UpdateProvider;
+
+import org.apache.ibatis.annotations.*;
 import org.apache.ibatis.type.JdbcType;
 
 public interface TemplateoptMapper {
-
+    //通过模板id找到模板题的选项
+    @Select("SELECT * FROM templateopt WHERE belongsto = #{Tid}")
+    List<Templateopt> gettoptsByTid(int Tid);
 }

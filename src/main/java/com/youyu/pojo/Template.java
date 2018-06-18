@@ -9,6 +9,16 @@ public class Template {
 
     private String qtype;
 
+    private String showname;
+
+    public String getShowname() {
+        return showname;
+    }
+
+    public void setShowname(String showname) {
+        this.showname = showname;
+    }
+
     public Integer getId() {
         return id;
     }

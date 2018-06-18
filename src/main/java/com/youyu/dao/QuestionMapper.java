@@ -17,7 +17,7 @@ public interface QuestionMapper {
     void delQuestion(int Qid);
 
     //通过问卷id找到其包含的所有题目
-    @Select("SELECT * FROM question WHERE belongsto = #{QNid}")
+    @Select("SELECT * FROM question WHERE belongsto = #{QNid} ORDER BY numbering ASC")
     List<Question> getQuestionsFromQNid(int QNid);
 
     //查找id找到题目
@@ -27,4 +27,20 @@ public interface QuestionMapper {
     //通过id找到问卷id
     @Select("SELECT belongsto FROM question WHERE id = #{Qid}")
     int getQNidByqid(int Qid);
+
+    //计算问卷中的题目数量
+    @Select("SELECT COUNT(*) FROM question WHERE belongsto = #{QNid}")
+    int getqnum(int QNid);
+
+    //判断是否为编辑
+    @Select("SELECT * FROM question WHERE numbering = #{num} AND content = #{con}")
+    Question isEdit(@Param("num") int num,@Param("con") String con);
+
+    //通过numbering找到题目id
+    @Select("SELECT id FROM question WHERE numbering = #{num}")
+    int findidbyNumbering(int num);
+
+    //将题目i的numbering替换
+    @Select("UPDATE question SET numbering = #{nnum} WHERE belongsto = #{QNid} AND numbering = #{onum}")
+    void changenum(@Param("QNid")int QNid,@Param("onum")int onum,@Param("nnum")int nnum);
 }

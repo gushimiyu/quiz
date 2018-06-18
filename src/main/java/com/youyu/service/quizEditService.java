@@ -1,8 +1,6 @@
 package com.youyu.service;
 
-import com.youyu.pojo.Options;
-import com.youyu.pojo.Question;
-import com.youyu.pojo.Questionexm;
+import com.youyu.pojo.*;
 
 import java.util.List;
 
@@ -24,4 +22,22 @@ public interface quizEditService {
 
     //通过题目id返回它所属的问卷
     int getQuestionnaireById(int id);
+
+    //返回模板列表
+    List<templateX> getAlltemplate();
+
+    //通过模板显示名返回题目
+    Questionexm getQuestionByshowname(String showname);
+
+    //找到下一道应该生成的题号
+    int getnewNumbering(int QNid);
+
+    //判断是否为编辑
+    int isEditQ(Question q);
+
+    //通过编号删除题目
+    void delQuestionByNumbering(int numbering);
+
+    //为QNid号问卷排序
+    void order(int QNid,String way,int numbering);
 }

@@ -12,11 +12,11 @@
     <title>问卷编辑</title>
     <script src="jquery-3.3.1.min.js"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="assets/materialize/css/materialize.min.css" media="screen,projection" />
+    <link rel="stylesheet" href="../assets/materialize/css/materialize.min.css" media="screen,projection" />
     <!-- Bootstrap Styles-->
-    <link href="assets/css/bootstrap.css" rel="stylesheet" />
+    <link href="../assets/css/bootstrap.css" rel="stylesheet" />
     <!-- FontAwesome Styles-->
-    <link href="assets/css/font-awesome.css" rel="stylesheet" />
+    <link href="../assets/css/font-awesome.css" rel="stylesheet" />
     <!-- Google Fonts-->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
     <%
@@ -28,9 +28,10 @@
 
     <div class="col-md-4 col-sm-4" style="margin-right: -15px">
 
-        <div class="card"  style="position: fixed ! important; left: 0px; top: 0px;width: 600px">
+        <div class="card"  style="position: fixed ! important; left: 0px; top: 0px;width: 600px;overflow-y: scroll;height: 800px">
             <div class="card-action">
                 题目编辑
+                <button class="btn btn-primary" onclick="location.href='<%=basePath%>/preview'" type="button" style="float: right">预览问卷&gt;</button>
             </div>
             <div class="card-content" style="margin-top: -20px">
                 <ul class="collapsible" data-collapsible="accordion">
@@ -176,7 +177,7 @@
                 <div id="showplace">
 
                 <c:forEach items="${questionlist}" var="question">
-                    <div class="card-content">
+                    <div class="card-content" style="margin-bottom: 30px">
                         <form>
                             <input type="hidden" name="belongsto" id="belongsto" value="1">
                             <input type="hidden" name="id" id="questionid" value="${question.q.id}">
@@ -228,47 +229,7 @@
 
                 </div>
 
-                <p>下面是样例</p>
 
-                <div class="card-content">
-                    <input type="hidden" name="belongsto" id="belongsto" value="1">
-                    <input type="hidden" name="numbering" id="numbering" value="10">
-                    <input type="hidden" name="optnum" id="optnum" value="3">
-                    <input type="hidden" name="qtype" id="qtype" value="radio">
-                    <span class="card-title">把laoka放进冰箱需要几步？</span>
-                    <p>
-                        <input class="with-gap" name="group1" type="radio" id="opt1"  />
-                        <label for="opt1">1步</label>
-                    </p>
-                    <p>
-                        <input class="with-gap" name="group1" type="radio" id="opt2"  />
-                        <label for="opt2">2步</label>
-                    </p>
-                    <p>
-                        <input class="with-gap" name="group1" type="radio" id="opt3"  />
-                        <label for="opt3">3步</label>
-                    </p>
-                    <div class="card-action" style="float: right">
-                        <a href="#" style="color: red">删除</a>
-                        <button class="btn btn-primary" type="button" id="edtbtn">编辑</button>
-                    </div>
-                </div>
-
-                <div class="card-content">
-                    <span class="card-title">Card Title</span>
-                    <p>
-                        <input class="with-gap" name="group1" type="radio" id="test3"  />
-                        <label for="test3">Green</label>
-                    </p>
-                    <p>
-                        <input type="checkbox" class="filled-in" id="filled-in-box" checked="checked" />
-                        <label for="filled-in-box">Filled in</label>
-                    </p>
-                    <div class="card-action" style="float: right">
-                        <a href="#" style="color: red">删除</a>
-                        <button class="btn btn-primary">编辑</button>
-                    </div>
-                </div>
             </div>
 
 
@@ -281,18 +242,17 @@
             </div>
             <div class="card-content" style="margin: -10px">
                 <ul class="collapsible" data-collapsible="accordion">
-                    <li>
-                        <div class="collapsible-header"><i class="material-icons">filter_drama</i>First</div>
-                        <div class="collapsible-body"><p>111</p></div>
-                    </li>
-                    <li>
-                        <div class="collapsible-header"><i class="material-icons">place</i>Second</div>
-                        <div class="collapsible-body"><p>222</p></div>
-                    </li>
-                    <li>
-                        <div class="collapsible-header"><i class="material-icons">whatshot</i>Third</div>
-                        <div class="collapsible-body"><p>333</p></div>
-                    </li>
+                    <c:forEach items="${templatelist}" var="tems">
+                        <li>
+                            <div class="collapsible-header"><i class="material-icons">subject</i>${tems.type}</div>
+                            <div class="collapsible-body">
+                            <c:forEach items="${tems.templates}" var="tem">
+                                <input type="hidden" value="${tem.showname}" name="showname">
+                                <p><a id="edittemplate">${tem.showname}</a></p>
+                            </c:forEach>
+                            </div>
+                        </li>
+                    </c:forEach>
                 </ul>
             </div>
         </div>
