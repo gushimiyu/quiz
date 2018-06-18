@@ -17,6 +17,7 @@ import org.apache.ibatis.annotations.UpdateProvider;
 import org.apache.ibatis.type.JdbcType;
 
 public interface OptionsMapper {
+
     @Select("select * from options where belongsto=#{belongsto}")
     List<Options> findAllO(@Param("belongsto")Integer belongsto);
 
@@ -24,4 +25,17 @@ public interface OptionsMapper {
     Integer findNum(@Param("optionto") Integer optionto );
 
 
+    //添加选项
+    @Insert("INSERT INTO options(content,belongsto,nextquestion) VALUES (#{content},#{belongsto},0)")
+    @org.apache.ibatis.annotations.Options(useGeneratedKeys = true,keyProperty = "id")
+    void addOption(Options opt);
+
+
+    //删除id题的所有选项
+    @Delete("DELETE FROM options WHERE belongsto = #{Qid}")
+    void delOptions(int Qid);
+
+    //找到id题的所有选型
+    @Select("SELECT * FROM options WHERE belongsto = #{Qid}")
+    List<Options> getOptions(int Qid);
 }

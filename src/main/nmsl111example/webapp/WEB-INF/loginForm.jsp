@@ -19,7 +19,7 @@
             alert("hey");
             alert("<%=basePath%>");
             $.post("ajaxList.action",{
-                acc:acc,
+                acc:acc
             },function (data) {
                 for(i=0;i<data.length;i++) {
                     var str = "<li value=" + data[i].acc + ">" + data[i].acc+"----"+data[i].passwd + "</li>";

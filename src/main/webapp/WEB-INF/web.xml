@@ -77,4 +77,5 @@
     <url-pattern>*.jpg</url-pattern>
   </servlet-mapping>
 
+
 </web-app>

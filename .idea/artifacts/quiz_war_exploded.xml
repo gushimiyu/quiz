@@ -35,6 +35,7 @@
           <element id="library" level="project" name="Maven: log4j:log4j:1.2.17" />
           <element id="library" level="project" name="Maven: org.aspectj:aspectjweaver:1.8.10" />
           <element id="library" level="project" name="Maven: org.aspectj:aspectjrt:1.8.10" />
+          <element id="library" level="project" name="Maven: javax.servlet:jstl:1.2" />
         </element>
       </element>
       <element id="directory" name="META-INF">

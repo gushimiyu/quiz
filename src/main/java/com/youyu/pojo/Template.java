@@ -3,9 +3,21 @@ package com.youyu.pojo;
 public class Template {
     private Integer id;
 
-    private String type;
+    private String typee;
 
     private String content;
+
+    private String qtype;
+
+    private String showname;
+
+    public String getShowname() {
+        return showname;
+    }
+
+    public void setShowname(String showname) {
+        this.showname = showname;
+    }
 
     public Integer getId() {
         return id;
@@ -15,12 +27,20 @@ public class Template {
         this.id = id;
     }
 
-    public String getType() {
-        return type;
+    public String getTypee() {
+        return typee;
     }
 
-    public void setType(String type) {
-        this.type = type == null ? null : type.trim();
+    public void setTypee(String typee) {
+        this.typee = typee == null ? null : typee.trim();
+    }
+
+    public String getQtype() {
+        return qtype;
+    }
+
+    public void setQtype(String qtype) {
+        this.qtype = qtype == null ? null : qtype.trim();
     }
 
     public String getContent() {

@@ -11,7 +11,8 @@ public class Question {
 
     private String content;
 
-    private byte[] piture;
+    private byte[] picture;
+
 
     public String getContent() {
         return content;
@@ -21,12 +22,12 @@ public class Question {
         this.content = content == null ? null : content.trim();
     }
 
-    public byte[] getPiture() {
-        return piture;
+    public byte[] getPicture() {
+        return picture;
     }
 
-    public void setPiture(byte[] piture) {
-        this.piture = piture;
+    public void setPicture(byte[] picture) {
+        this.picture = picture;
     }
 
     public Integer getId() {
