@@ -1,3 +1,4 @@
+
 <%--
   Created by IntelliJ IDEA.
   User: youyusama
@@ -13,46 +14,28 @@
     <%
         String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort();
     %>
-    <script type="text/javascript">
-        function wow(){
-            var acc=$("#acc").val();
-            alert("hey");
-            alert("<%=basePath%>");
-            $.post("ajaxList.action",{
-                acc:acc,
-            },function (data) {
-                for(i=0;i<data.length;i++) {
-                    var str = "<li value=" + data[i].acc + ">" + data[i].acc+"----"+data[i].passwd + "</li>";
-                    $("#listStudent").append(str);
-                }
-            });
-        }
-    </script>
+
 </head>
 <body>
-    <h3>login</h3>
-    <form action="login" method="post">
-        <font color="#b22222">${requestScope.message}</font>
-        <table>
-            <tr>
-                <tb><label>acc:</label></tb>
-                <tb><input type="text" id="acc" name="acc"></tb>
-            </tr>
-            <tr>
-                <tb><label>passwd:</label></tb>
-                <tb><input type="text" id="passwd" name="passwd"></tb>
-            </tr>
-            <tr>
-                <td><input type="submit" value="login"></td>
-            </tr>
-        </table>
-    </form>
-    <span id="nameDiv2" style="color: red; font-size: 15px;"></span>
-    <ul  id="listStudent">
-        <li>如下</li>
-    </ul>
-
-    <button onclick="wow()">baobao</button>
+<h3>login</h3>
+<form  method="post">
+    <font color="#b22222">${requestScope.message1}</font>
+    <table>
+        <tr>
+            <tb><label>题目</label></tb>
+            <tb><input type="text" id="title" name="title"></tb>
+        </tr>
+        <tr>
+            <tb><label>描述</label></tb>
+            <tb><input type="text" id="description" name="description"></tb>
+        </tr>
+        <tr>
+            <td><button formaction="createquestionnaire" type="submit" onclick="javascript:window.location='/createquestionnaire'">登录</button></td>
+            <td><button formaction="register" type="submit" onclick="javascript:window.location='/register'">注册</button></td>
+        </tr>
+    </table>
+</form>
 </body>
 
 </html>
+

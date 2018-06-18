@@ -1617,48 +1617,53 @@
       <DataType>varchar(20)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="371" parent="248" name="PRIMARY">
+    <column id="371" parent="248" name="showname">
+      <Position>5</Position>
+      <DataType>varchar(20)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="372" parent="248" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="372" parent="249" name="content">
+    <column id="373" parent="249" name="content">
       <Position>1</Position>
       <DataType>text|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="373" parent="249" name="belongsto">
+    <column id="374" parent="249" name="belongsto">
       <Position>2</Position>
       <DataType>int(11)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="374" parent="249" name="belongsto">
+    <index id="375" parent="249" name="belongsto">
       <ColNames>belongsto</ColNames>
     </index>
-    <foreign-key id="375" parent="249" name="templateopt_ibfk_1">
+    <foreign-key id="376" parent="249" name="templateopt_ibfk_1">
       <ColNames>belongsto</ColNames>
       <RefSchemaName>quizdb</RefSchemaName>
       <RefTableName>template</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="376" parent="250" name="id">
+    <column id="377" parent="250" name="id">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="377" parent="250" name="acc">
+    <column id="378" parent="250" name="acc">
       <Position>2</Position>
       <DataType>varchar(20)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="378" parent="250" name="passwd">
+    <column id="379" parent="250" name="passwd">
       <Position>3</Position>
       <DataType>varchar(20)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="379" parent="250" name="PRIMARY">
+    <key id="380" parent="250" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>

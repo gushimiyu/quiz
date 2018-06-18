@@ -30,25 +30,32 @@ public class QltostaController {
     @Autowired
     @Qualifier("answernaireService")
     private AnswernaireService answernaireService;
-    @RequestMapping("/sta") //定义方法名
+    @RequestMapping("/count") //定义方法名
     public ModelAndView sta(
-            Integer id,
             ModelAndView retMap,
             Model model,
-            HttpSession session
-    ){ Questionnaire questionnaire=questionnaireService.getid(id);
+            HttpSession session,
+            Integer id
+    ){
+        Questionnaire questionnaire=questionnaireService.getid(id);
         int a =questionnaire.getBrv();
         System.out.println(a);
         a=a+1;
+        Integer num=answernaireService.getNumbe(id);
+        if (num==0){session.setAttribute("num",'0');}
+        else{session.setAttribute("num",num);}
         questionnaireService.setbrow(a,questionnaire.getId());
+        Integer s=questionnaire.getId();
+        System.out.println(s);
+
         session.setAttribute("questionnaire",questionnaire.getId());
-        List<Question> question_list = questionService.getAllQ(id);
+        List<Question> question_list = questionService.getAllQ(s);
         List<QuestionforT> a_list=new ArrayList<>();
         List<AnswernaireforT> b_list=new ArrayList<>();
         System.out.println(question_list.size());
         for(int i=0;i<question_list.size();i++)
         {   System.out.println(question_list.get(i).getType());
-            if(question_list.get(i).getType().equals("radio")){
+            if(question_list.get(i).getType().equals("radio")||question_list.get(i).getType().equals("checkbox")){
             QuestionforT teee=new QuestionforT();
             List<Options> options_list=optionsService.getAllO(question_list.get(i).getId());
             teee.setQ(question_list.get(i));
@@ -111,7 +118,7 @@ public class QltostaController {
         System.out.println(id);
         System.out.println(question_list.size());
         System.out.println("cao");
-        retMap.setViewName("sta");
+        retMap.setViewName("count");
         return retMap;
     }
 }

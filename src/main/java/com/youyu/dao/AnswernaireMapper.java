@@ -22,4 +22,7 @@ public interface AnswernaireMapper {
 
     @Select("select * from answer where  answerto=#{answerto}")
     List <Answer>findAns(@Param("answerto") Integer answerto );
+
+    @Select("select count(1) from answernaire where  belongsto=#{belongsto}")
+    Integer findNumbe(@Param("belongsto") Integer belongsto );
 }

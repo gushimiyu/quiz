@@ -1,0 +1,36 @@
+package com.youyu.service;
+
+import com.youyu.dao.UserMapper;
+import com.youyu.pojo.User;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+
+@Service("userService")
+public class UserServiceImpl implements UserService {
+    @Autowired
+    private UserMapper userMapper;
+
+    @Override
+    public User login(String acc, String passwd) {
+        return userMapper.findWithLoginnameAndPassword(acc, passwd);
+    }
+
+    @Override
+    public User findaaaaa(String acc) {
+        return userMapper.findWithLoginname(acc);
+    }
+
+    @Override
+    public List<User> findAll() {
+        return userMapper.findUsers();
+    }
+
+    @Override
+    public void insertaa(String acc, String passwd) {
+        userMapper.insertUser(acc, passwd);
+
+    }
+}

@@ -16,5 +16,15 @@ import org.apache.ibatis.annotations.UpdateProvider;
 import org.apache.ibatis.type.JdbcType;
 
 public interface UserMapper {
+    @Select("Select * from user where acc=#{acc} and passwd=#{passwd}")
+    User findWithLoginnameAndPassword(@Param("acc")String acc,@Param("passwd")String passwd);
 
+    @Select("Select * from user where acc=#{acc} ")
+    User findWithLoginname(@Param("acc")String acc);
+
+    @Select("Select * from user")
+    List<User> findUsers();
+
+    @Update("insert into user(acc,passwd) value(#{acc},#{passwd})")
+    void insertUser(@Param("acc")String acc, @Param("passwd")String passwd);
 }

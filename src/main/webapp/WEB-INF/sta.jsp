@@ -22,7 +22,7 @@
     </tr>
     <c:forEach items="${a_list}" var="a">
     <tr>
-        <td>${a.q.id}</td>
+        <td>${a.q.numbering}</td>
         <td>${a.q.content}</td>
         <c:forEach items="${a.option}" var="s">
             <td>${s.opt.content}</td>
@@ -44,7 +44,9 @@
         </c:forEach>
 
     </tr>
+
     </c:forEach>
     </table>
+
 </body>
 </html>
